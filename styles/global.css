@@ -34,5 +34,5 @@
   --ff-maven-pro: "Maven Pro", sans-serif;
   --text-md: 400 1rem/1.4 var(--ff-maven-pro)
   --text-sm: 400 0.875rem/1.4 var(--ff-maven-pro)
-  --text-sm-mobile: 400 0.8rem/1.4 var(--ff-maven-pro)
+  --text-sm-mobile: 400 0.5rem/1.4 var(--ff-maven-pro)
 }
