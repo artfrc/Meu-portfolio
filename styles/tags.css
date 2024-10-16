@@ -1,22 +1,35 @@
 .tags {
   display:  flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
+  gap: .5rem;
+  margin-top: 2rem;
 }
 
 .tag {
   display: flex;
-  width: 6.125rem;
-  height: 2.5rem;
+  width: 6.4rem;
+  height: 1.8rem;
   background-color: #1E1E1E;
   border-radius: 999px;
   align-items: center; 
   justify-content: center; 
-  margin-top: 2rem;
   gap: .5rem;
 }
 
 .tag span {
   font: var(--text-md);
   color: var(--gray-500);
+}
+
+@media(width >= 80em) {
+  .tags {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .tag {
+    height: 2.5rem;
+    gap: .5rem;
+  }
 }
