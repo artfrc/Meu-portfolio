@@ -50,7 +50,6 @@
 }
 
 .text p:nth-child(3) {
-  /* width: 19rem; */
   font: var(--text-sm-mobile);
   color: var(--gray-500);
 
@@ -60,7 +59,6 @@
 
   .intro {
     background-size: cover;
-    
   }
 
   .image-wrapper img:nth-child(1) {
