@@ -14,7 +14,7 @@
 }
 
 .image-wrapper img:nth-child(1) {
-  width: 3.454375rem;
+  width: 5.454375rem;
   border: 2px solid var(--red);
   border-radius: 50%;
 }
