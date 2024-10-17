@@ -1,0 +1,96 @@
+  .contact {
+    background-image: url(../assets/backgrounds/Background_Contacts.png);
+    background-size: contain;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .contact header {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .contact header p {
+    font: var(--subtitle-mobile);
+    color: var(--purple);
+  }
+
+  .contact header h2 {
+    font: var(--title-md);
+    color: var(--gray-600);
+  }
+
+  .contact header span {
+    font: var(--text-md);
+    color: var(--gray-500);
+    margin-bottom: 1rem;
+  }
+
+  .links {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    width: 15rem;
+    height: 3rem;
+    background-color: var(--gray-300);
+    border-radius: .5rem;
+    border: 1px solid transparent;
+  }
+
+  .link:hover {
+    border: 1px solid var(--blue);
+  }
+
+  .link img:nth-child(1) {
+    padding-left: 1.5rem;
+  }
+
+  .link a {
+    font: var(text-md);
+    color: var(--gray-500);
+    text-decoration: none;
+    padding-left: 1rem;
+  }
+
+  .link a:hover {
+    text-decoration: underline;
+    color: var(--blue);
+  }
+
+  .link span {
+    font: var(text-md);
+    color: var(--gray-500);
+    padding-left: 1rem;
+  }
+
+  .link img:nth-child(3) {
+    margin-left: auto;
+    padding-right: 1.5rem;
+  }
+
+  @media(width >= 80em) {
+    .contact {
+      background-size: cover;
+    }
+
+    .contact header p {
+      font: var(--subtitle);
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      width: 25rem;
+      height: 4.25rem;
+      background-color: var(--gray-300);
+      border-radius: .5rem;
+    }
+  }
