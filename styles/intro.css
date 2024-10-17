@@ -55,6 +55,10 @@
 
 }
 
+.arrowdown {
+  margin-top: 3rem;
+}
+
 @media(width >= 80em){
 
   .intro {
