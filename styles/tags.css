@@ -27,17 +27,15 @@
 
 @keyframes brilhar {
   0% {
-    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.2); /* Sombra escura e suave */
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.2); 
   }
   50% {
-    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.8); /* Sombra mais clara e levemente maior */
+    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.8); 
   }
   100% {
-    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.2); /* Volta à sombra suave */
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.2);
   }
 }
-
-
 
 .tag span {
   font: var(--text-md);

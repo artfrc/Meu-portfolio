@@ -1,0 +1,71 @@
+.services {
+  background-color: var(--gray-100);
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.services header p {
+  font: var(--subtitle-mobile);
+  color: var(--red);
+}
+
+.services header h3 {
+  font: var(--title-md);
+  color: var(--gray-600);
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  padding-inline: .5rem;
+}
+
+.grid-services {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.card-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 17.5rem;
+  height: 9,6875rem;
+  border: 2px solid var(--gray-200);
+  border-radius: .75rem;
+}
+
+.card-service img {
+  padding-top: .7rem;
+  padding-left: .5rem;
+  align-self: flex-start;
+}
+
+#target {
+  width: 50px;
+}
+
+.card-service p {
+  font: var(--title-sm);
+  color: var(--gray-600);
+  padding-top: .7rem;
+  padding-left: .5rem;
+  align-self: flex-start;
+}
+
+.card-service span {
+  font: var(--text-sm);
+  color: var(--gray-500);
+  padding-top: .7rem;
+  padding-left: .5rem;
+  padding-bottom: .5rem;
+  align-self: flex-start;
+}
+
+@media(width >= 80em) {
+  .grid-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
