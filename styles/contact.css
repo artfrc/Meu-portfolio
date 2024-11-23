@@ -53,6 +53,10 @@
     padding-left: 1.5rem;
   }
 
+  #whatsapp {
+    height: 1.5em;
+  }
+
   .link a {
     font: var(text-md);
     color: var(--gray-500);
