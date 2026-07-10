@@ -8,7 +8,7 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio</title>
+  <title>Arthur Fernandes | Portfólio</title>
   
   <link rel="stylesheet" href="styles/index.css">
   
@@ -29,22 +29,30 @@
 
     <div class="text">
       <p>Hello World! Meu nome é <span>Arthur Fernandes</span> e sou</p>
-      <h1>Desenvolvedor Backend Python</h1>
+      <h1>Desenvolvedor Full-Stack Java / Vue.js</h1>
       <p>
-        Transformo necessidades em aplicações reais, evolventes e funcionais. Desenvolvo sistemas contribuindo com soluções inovadoras e eficazes para desafios complexos.</p>
+        Desenvolvedor Full-Stack na Algar Telecom, atuando na plataforma Urano V2 com Java, Spring Boot e Vue.js. Transformo necessidades em aplicações reais, evolventes e funcionais, unindo soluções inovadoras e eficazes para desafios complexos.</p>
     </div>
 
     <div class="tags">
 
       <div class="tag white-light">
+        <img src="assets/icons/java.svg" alt="icone Java">
+        <span>Java</span>
+      </div>
+
+      <div class="tag white-light">
         <img src="assets/icons/python.svg" alt="icone Python">
         <span>Python</span>
       </div>
-      
-      
 
       <div class="tag white-light">
-        <img id="database" src="assets/icons/database.svg" alt="icone React">
+        <img src="assets/icons/React-color.svg" alt="icone React">
+        <span>React</span>
+      </div>
+
+      <div class="tag white-light">
+        <img id="database" src="assets/icons/database.svg" alt="icone Database">
         <span>Database</span>
       </div>
 
@@ -67,11 +75,6 @@
           <img src="assets/icons/JavaScript-color.svg" alt="icone Javascript">
         </a>
         <span>Javascript</span>
-      </div>
-
-      <div class="tag white-light">
-        <img src="assets/icons/java.svg" alt="icone Java">
-        <span>Java</span>
       </div>
 
     </div>
@@ -187,7 +190,26 @@
 
     </div>
 
+    <p class="contact-form-note">
+      Ou envie uma mensagem direto para minha API em Java/Spring Boot —
+      <a href="https://github.com/artfrc/Meu-portfolio/tree/main/backend" target="_blank">código aqui</a>.
+      Roda local, então só funciona com o backend ligado na sua máquina.
+    </p>
+
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="form-row">
+        <input type="text" id="name" name="name" placeholder="Seu nome" maxlength="120" required>
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" maxlength="180" required>
+      </div>
+      <input type="text" id="subject" name="subject" placeholder="Assunto" maxlength="150" required>
+      <textarea id="message" name="message" placeholder="Sua mensagem" maxlength="4000" rows="4" required></textarea>
+      <button type="submit" id="contact-submit">Enviar mensagem</button>
+      <p id="contact-feedback" class="contact-feedback" role="status" aria-live="polite"></p>
+    </form>
+
   </div>
-  
+
+  <script src="assets/js/contact.js"></script>
+
 </body>
 </html>

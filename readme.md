@@ -21,3 +21,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML
 - CSS
+- JavaScript
+
+O formulário de contato fala com uma API própria em **Java 21 + Spring Boot**
+(pasta [`backend/`](backend/)) — persistência com Spring Data JPA, validação,
+rate limiting e endpoint admin protegido por API key. Veja
+[`backend/README.md`](backend/README.md) para rodar localmente.
