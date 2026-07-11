@@ -6,6 +6,9 @@ GitHub Pages — esse backend roda à parte, publicado no Render, e o frontend f
 ele via `fetch()` (veja `../assets/js/contact.js` e `window.PORTFOLIO_API_BASE_URL`
 setado em `../index.html`).
 
+**Status:** no ar em `https://artfrc-portfolio-backend.onrender.com`, com
+notificação no Telegram testada de ponta a ponta (site publicado → API → Telegram).
+
 ## Rodando localmente
 
 Pré-requisitos: JDK 21+ e Maven (ou use o `mvnw` se preferir gerar o wrapper).

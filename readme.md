@@ -22,8 +22,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - HTML
 - CSS
 - JavaScript
+- Java 21 + Spring Boot (API do formulário de contato)
 
 O formulário de contato fala com uma API própria em **Java 21 + Spring Boot**
 (pasta [`backend/`](backend/)) — persistência com Spring Data JPA, validação,
-rate limiting e endpoint admin protegido por API key. Veja
-[`backend/README.md`](backend/README.md) para rodar localmente.
+rate limiting e endpoint admin protegido por API key. A API está publicada no
+Render e notifica no Telegram a cada mensagem recebida. Veja
+[`backend/README.md`](backend/README.md) para rodar localmente ou fazer o deploy.
