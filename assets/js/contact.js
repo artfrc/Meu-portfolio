@@ -22,7 +22,10 @@ async function handleSubmit(event) {
   };
 
   setLoading(true);
-  setFeedback("", null);
+  setFeedback(
+    "Enviando... o servidor pode estar 'dormindo' (plano free do Render) e demorar até 50s para acordar.",
+    "info"
+  );
 
   try {
     const response = await fetch(`${API_BASE_URL}/api/contact`, {
@@ -62,12 +65,13 @@ async function handleSubmit(event) {
 
 function setLoading(isLoading) {
   submitButton.disabled = isLoading;
+  submitButton.classList.toggle("loading", isLoading);
   submitButton.textContent = isLoading ? "Enviando..." : "Enviar mensagem";
 }
 
 function setFeedback(text, type) {
   feedback.textContent = text;
-  feedback.classList.remove("success", "error");
+  feedback.classList.remove("success", "error", "info");
   if (type) {
     feedback.classList.add(type);
   }
