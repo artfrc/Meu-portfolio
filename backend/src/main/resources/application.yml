@@ -1,5 +1,7 @@
 server:
-  port: 8080
+  # Render (e a maioria dos PaaS) injeta a porta a escutar via $PORT; localmente
+  # cai no 8080 de sempre.
+  port: ${PORT:8080}
 
 spring:
   application:

@@ -1,7 +1,6 @@
-// Fala com a API de contato (backend/ — Java + Spring Boot). Como o GitHub Pages
-// só serve arquivos estáticos, essa chamada só funciona com o backend rodando
-// localmente (veja backend/README.md). Sem ele, o formulário mostra um aviso claro
-// em vez de falhar silenciosamente.
+// Fala com a API de contato (backend/ — Java + Spring Boot), publicada no Render
+// (veja backend/README.md e render.yaml). window.PORTFOLIO_API_BASE_URL é setado
+// no index.html; em dev local sem esse script, cai no localhost de sempre.
 const API_BASE_URL = window.PORTFOLIO_API_BASE_URL || "http://localhost:8080";
 
 const form = document.getElementById("contact-form");
@@ -53,7 +52,7 @@ async function handleSubmit(event) {
     setFeedback("Não consegui enviar agora. Tente novamente mais tarde.", "error");
   } catch (error) {
     setFeedback(
-      "Backend offline: esse formulário chama uma API Java local (backend/, veja o README) que não fica publicada. Rode o projeto localmente pra testar, ou me chame pelo WhatsApp/LinkedIn acima.",
+      "Não consegui falar com o servidor agora (ele pode estar 'acordando' após um tempo ocioso — no plano free do Render isso leva uns 30-50s). Tente de novo em instantes ou me chame pelo WhatsApp/LinkedIn acima.",
       "error"
     );
   } finally {

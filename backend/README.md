@@ -2,8 +2,9 @@
 
 API em Java 21 + Spring Boot 3.5 que recebe as mensagens enviadas pelo formulário de
 contato do portfólio (`../index.html`). O site em si continua estático, publicado no
-GitHub Pages — esse backend roda à parte, localmente, e o frontend fala com ele via
-`fetch()` quando está no ar (veja `../assets/js/contact.js`).
+GitHub Pages — esse backend roda à parte, publicado no Render, e o frontend fala com
+ele via `fetch()` (veja `../assets/js/contact.js` e `window.PORTFOLIO_API_BASE_URL`
+setado em `../index.html`).
 
 ## Rodando localmente
 
@@ -91,9 +92,40 @@ Pontos de extensão pensados de propósito:
   `JavaMailSender`, Discord, ntfy.sh) e ajustar `NotifierConfig` — o resto do app não muda.
 - **Banco de produção**: trocar o datasource do H2 por Postgres/MySQL no
   `application.yml`; o `ddl-auto: update` e o resto do código JPA já funcionam.
-- **Deploy público**: hoje é local-only por decisão de escopo. Pra publicar de
-  verdade (Render/Railway/Fly.io), só ajustar `portfolio.allowed-origins` para a URL
-  publicada e apontar `PORTFOLIO_API_BASE_URL` no frontend.
+- **Deploy público**: já publicado no Render — veja a seção "Deploy no Render" abaixo.
+
+## Deploy no Render
+
+O repo já tem tudo pronto pra isso: `render.yaml` (blueprint) na raiz do repo e
+`backend/Dockerfile`. O H2 fica no disco efêmero do container — some a cada novo
+deploy/restart, mas a notificação no Telegram é disparada na hora, independente do
+banco, então isso não afeta o fluxo de notificação.
+
+1. Crie uma conta em [render.com](https://render.com) (dá pra logar com GitHub).
+2. **New > Blueprint**, conecte este repositório. O Render lê o `render.yaml` e cria
+   o serviço `artfrc-portfolio-backend` sozinho (root dir `backend/`, build via
+   Docker, health check em `/actuator/health`).
+3. Quando ele pedir os env vars marcados como secret, preencha com os valores do seu
+   `backend/.env` local:
+   - `PORTFOLIO_TELEGRAM_BOT_TOKEN`
+   - `PORTFOLIO_TELEGRAM_CHAT_ID`
+   - `PORTFOLIO_ADMIN_KEY` (defina uma chave sua, não deixe o padrão de dev)
+4. Deploy. O primeiro build demora alguns minutos (baixa as dependências Maven).
+5. Confirme a URL pública gerada (algo como
+   `https://artfrc-portfolio-backend.onrender.com`). Se vier diferente do nome usado
+   em `render.yaml`, atualize `window.PORTFOLIO_API_BASE_URL` em `../index.html` pra
+   bater com a URL real.
+6. Teste com curl (troque a URL):
+   ```bash
+   curl -X POST https://artfrc-portfolio-backend.onrender.com/api/contact \
+     -H "Content-Type: application/json" \
+     -d '{"name":"Teste","email":"t@t.com","subject":"Oi","message":"Testando o deploy"}'
+   ```
+   Deve chegar uma mensagem no Telegram poucos segundos depois.
+
+No plano free do Render o serviço "dorme" depois de ~15 min sem tráfego e o primeiro
+request depois disso demora uns 30-50s pra acordar (o frontend já mostra um aviso
+pra esse caso, veja `assets/js/contact.js`).
 
 ## Testes
 
